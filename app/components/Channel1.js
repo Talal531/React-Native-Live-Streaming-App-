@@ -5,6 +5,7 @@ export default class Channel1 extends Component {
     static navigationOptions = {
         headerTitle: 'TV Channel'
     }
+    
     render() {
         const { navigation } = this.props;
         const ItemId = navigation.getParam('itemId', 'NO-ID');
@@ -13,12 +14,6 @@ export default class Channel1 extends Component {
             <View style={styles.container}>
                 <Text> {`Channel ${JSON.stringify(ItemId)}`}</Text>
                 <Text> {`${JSON.stringify(ItemURL)}`}</Text>
-                <WebView
-                    // ref={WEBVIEW_REF}
-                    source={{uri: 'https://www.google.com'}}
-                    onError={console.error.bind(console, 'error')}
-                    javaScriptEnabled={true}
-                    />
             </View>
         )
     }
